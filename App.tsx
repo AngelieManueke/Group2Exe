@@ -1,61 +1,105 @@
 import React from 'react';
-import { View, Text, Image, TextInput, ScrollView, StyleSheet } from 'react-native';
+import {ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 
-const MAD = () => {
+const Signin = () => {
+  const onPress = () => setCount(prevCount => prevCount + 1);
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.box}>
-        <Text style={styles.text}>Mobile App Development</Text>
-        <Image
-          style={styles.image}
-          source={{
-            uri: 'https://th.bing.com/th/id/OIP.6jV3WQimrUz34S7KoS1kywHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.3',
-          }}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Flowers Name"
-        />
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.th}>Welcome</Text>
       </View>
-    </ScrollView>
+      <ScrollView>
+        <View style={styles.u}>
+          <Text style={styles.cu}> Username </Text>
+        </View>
+        <TextInput
+          placeholder='Masukan username anda'
+          style={styles.in1}
+        />
+        <View style={styles.cp}>
+          <Text style={styles.password}> Password </Text>
+        </View>
+        <TextInput
+          placeholder='Masukan password anda'
+          style={styles.in2}
+        />
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+          <Text style={styles.sign}>Sign In</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    padding: 15,
-    justifyContent: 'center', 
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
   },
-  box: {
-    backgroundColor: '#FFE0EE',
-    padding: 20,
-    borderRadius: 10,
-    shadowColor: '#FFE8F2',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    alignItems: 'center',
-    marginBottom: 20,
+  header:{
+    marginBottom:50,
+    marginTop:25,
+    marginLeft:10,
   },
-  text: {
-    fontSize: 20,
-    marginBottom: 20,
+  th:{
+    fontSize:35,
+    fontWeight:'bold',
+    color:'black'
   },
-  image: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
-    marginBottom: 10,
+  u:{
+    marginBottom:6,
   },
-  input: {
-    height: 40,
+  cu:{
+    fontWeight:'bold',
+    marginLeft:4,
+    fontSize:20,
+    color:'black',
+  },
+  cp:{
+    marginBottom:6,
+  },
+  password:{
+    fontWeight:'bold',
+    fontSize:20,
+    marginLeft:4,
+    color:'black',
+  },
+  in1:{
+    height: 50,
     borderColor: 'black',
     borderWidth: 1,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-    width: '100%',
+    borderRadius:10,
+    marginBottom: 16,
+    marginLeft:9,
+    paddingLeft: 10,
+    width: '95%', 
+    
+  },
+  in2:{
+    height: 50,
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius:10,
+    marginBottom: 16,
+    marginLeft:9,
+    paddingLeft: 10,
+    width: '95%',
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: 'darkorange',
+    padding: 10,
+    marginTop:30,
+    width:'95%',
+    height: 50,
+    borderRadius:15,
+    marginLeft:9,
+  },
+  sign:{
+    paddingTop:4,
+    color:'white',
   },
 });
 
-export default MAD;
+export default Signin;
