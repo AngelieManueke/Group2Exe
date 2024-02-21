@@ -1,31 +1,49 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 
-const Signin = () => {
+const App = () => {
   const onPress = () => setCount(prevCount => prevCount + 1);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.th}>Welcome</Text>
+        <Text style={styles.th}>Registration</Text>
       </View>
       <ScrollView>
         <View style={styles.u}>
-          <Text style={styles.cu}> Username </Text>
+          <Text style={styles.name}> Name </Text>
         </View>
         <TextInput
-          placeholder='Masukan username anda'
-          style={styles.in1}
-        />
-        <View style={styles.cp}>
-          <Text style={styles.password}> Password </Text>
-        </View>
-        <TextInput
-          placeholder='Masukan password anda'
+          placeholder='Masukkan nama lengkap anda'
           style={styles.in2}
         />
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-          <Text style={styles.sign}>Sign In</Text>
-        </TouchableOpacity>
+        <View style={styles.u}>
+          <Text style={styles.username}> Username </Text>
+        </View>
+        <TextInput
+          placeholder='Masukkan username anda'
+          style={styles.in2}
+        />
+        <View style={styles.u}>
+          <Text style={styles.email}> Email </Text>
+        </View>
+        <TextInput
+          placeholder='Masukkan email anda'
+          style={styles.in2}
+        />
+        <View style={styles.u}>
+          <Text style={styles.address}> Address </Text>
+        </View>
+        <TextInput
+          placeholder='Masukkan alamat anda'
+          style={styles.in2}
+        />
+        <View style={styles.u}>
+          <Text style={styles.number}> Phone Number </Text>
+        </View>
+        <TextInput
+          placeholder='Masukkan Nomor telepon anda'
+          style={styles.in2}
+        />
       </ScrollView>
     </View>
   );
@@ -35,71 +53,46 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 10,
   },
   header:{
-    marginBottom:50,
     marginTop:25,
     marginLeft:10,
   },
   th:{
-    fontSize:35,
     fontWeight:'bold',
     color:'black'
   },
-  u:{
-    marginBottom:6,
-  },
-  cu:{
+  name:{
     fontWeight:'bold',
-    marginLeft:4,
-    fontSize:20,
     color:'black',
   },
-  cp:{
-    marginBottom:6,
-  },
-  password:{
+  username:{
     fontWeight:'bold',
-    fontSize:20,
+    color:'black',
+  },
+  email:{
+    fontWeight:'bold',
     marginLeft:4,
     color:'black',
   },
-  in1:{
-    height: 50,
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius:10,
-    marginBottom: 16,
-    marginLeft:9,
-    paddingLeft: 10,
-    width: '95%', 
+  address:{
+    fontWeight:'bold',
+    marginLeft:4,
+    color:'black',
+  },
+  number:{
+    fontWeight:'bold',
+    marginLeft:4,
+    color:'black',
     
   },
   in2:{
-    height: 50,
     borderColor: 'black',
     borderWidth: 1,
-    borderRadius:10,
-    marginBottom: 16,
-    marginLeft:9,
-    paddingLeft: 10,
-    width: '95%',
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: 'darkorange',
-    padding: 10,
-    marginTop:30,
-    width:'95%',
-    height: 50,
-    borderRadius:15,
-    marginLeft:9,
   },
   sign:{
-    paddingTop:4,
     color:'white',
   },
 });
 
-export default Signin;
+export default App;
